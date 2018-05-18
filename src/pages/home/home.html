@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>笔芯</ion-title>
+  </ion-navbar>
+  <div class="pageMenuSlides">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide {{i==0?'bottomLine':''}} titles" *ngFor="let item of menus;let i=index;" tappable (click)="selectPageMenu($event,i)">{{item}}</div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content>
+  <ion-slides #contentSlides (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <page-pagemenu1></page-pagemenu1>
+    </ion-slide>
+    <ion-slide>
+      <page-pagemenu2></page-pagemenu2>
+    </ion-slide>
+    <ion-slide>
+      <page-pagemenu1></page-pagemenu1>
+    </ion-slide>
+    <ion-slide>
+      <page-pagemenu2></page-pagemenu2>
+    </ion-slide>
+  </ion-slides>
+  <ion-slide>
+    <page-pagemenu1></page-pagemenu1>
+  </ion-slide>
+  <ion-slide>
+    <page-pagemenu1></page-pagemenu1>
+  </ion-slide>
+</ion-content>
+
